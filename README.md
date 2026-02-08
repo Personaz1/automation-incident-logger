@@ -25,3 +25,11 @@ Automation failures are common, but teams rarely track root causes consistently.
 ## Status
 Scaffold released. Open for contributors.
 
+
+
+## Working scaffold CLI
+```bash
+python3 src/ailog.py create --title "Webhook timeout" --severity high --summary "Provider timed out"
+python3 src/ailog.py list
+python3 src/ailog.py summary
+```
