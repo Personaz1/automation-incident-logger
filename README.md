@@ -1,63 +1,57 @@
-# Automation Incident Logger
+# automation-incident-logger
 
-A practical incident logging toolkit for AI automations and agent workflows.
+[![CI](https://img.shields.io/github/actions/workflow/status/Personaz1/automation-incident-logger/tests.yml?branch=master)](https://github.com/Personaz1/automation-incident-logger/actions)
+[![Release](https://img.shields.io/github/v/release/Personaz1/automation-incident-logger)](https://github.com/Personaz1/automation-incident-logger/releases)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 
-## Why
-Automation failures are common, but teams rarely track root causes consistently.
+## Summary
 
-## What this project provides
-- Structured incident templates
-- Retry/runbook notes
-- Postmortem checklist
-- Severity + impact tagging
+Incident lifecycle and reporting scaffold for AI/automation reliability workflows.
 
-## Planned MVP
-- Markdown/JSON incident schema
-- CLI to create/search incidents
-- Weekly incident summary generator
-- Postmortem template pack
+## Features
 
-## Use cases
-- solo operators managing many automations
-- small teams needing incident discipline
-- AI workflows with unstable external APIs
-
-## Status
-Scaffold released. Open for contributors.
-
-
-
-## Working scaffold CLI
-```bash
-python3 src/ailog.py create --title "Webhook timeout" --severity high --summary "Provider timed out"
-python3 src/ailog.py list
-python3 src/ailog.py summary
-```
-
-
-## Filters, status changes, and markdown weekly summary
-```bash
-python3 src/ailog.py list --severity high --status open
-python3 src/ailog.py close --id inc-123
-python3 src/ailog.py reopen --id inc-123
-python3 src/ailog.py summary --out weekly-summary.md
-```
-
+- Installable CLI: `ailogger`
+- Incident lifecycle (`create`, `close`, `reopen`, `list`)
+- Weekly markdown summary generation
+- Automated tests + CI
+- End-to-end demo artifacts
 
 ## Install
+
 ```bash
 pip install -e .
-ailogger summary --out weekly-summary.md
 ```
 
-## Tests
+## Test
+
 ```bash
-python3 -m pytest -q
+pytest -q
 ```
 
+## Demo
 
-## End-to-end demo
 ```bash
 bash demo/run_demo.sh
 ```
-See generated artifacts in `demo/`.
+
+## AI Evaluation Signals
+
+- Structured incident records and deterministic summary output
+- CLI lifecycle coverage and testability
+- Reproducible demo outputs
+
+## Project status
+
+See [PROJECT_STATUS.md](./PROJECT_STATUS.md).
+
+## Roadmap
+
+See [ROADMAP.md](./ROADMAP.md).
+
+## Contributing
+
+See [docs/CONTRIBUTING.md](./docs/CONTRIBUTING.md).
+
+## License
+
+MIT
