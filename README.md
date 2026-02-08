@@ -42,3 +42,15 @@ python3 src/ailog.py close --id inc-123
 python3 src/ailog.py reopen --id inc-123
 python3 src/ailog.py summary --out weekly-summary.md
 ```
+
+
+## Install
+```bash
+pip install -e .
+ailogger summary --out weekly-summary.md
+```
+
+## Tests
+```bash
+python3 -m pytest -q
+```
