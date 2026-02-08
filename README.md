@@ -33,3 +33,12 @@ python3 src/ailog.py create --title "Webhook timeout" --severity high --summary 
 python3 src/ailog.py list
 python3 src/ailog.py summary
 ```
+
+
+## Filters, status changes, and markdown weekly summary
+```bash
+python3 src/ailog.py list --severity high --status open
+python3 src/ailog.py close --id inc-123
+python3 src/ailog.py reopen --id inc-123
+python3 src/ailog.py summary --out weekly-summary.md
+```
