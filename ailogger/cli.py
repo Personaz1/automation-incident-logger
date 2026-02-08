@@ -1,4 +1,4 @@
-import argparse, json, pathlib, datetime
+import argparse, json, pathlib, datetime, uuid
 DB = pathlib.Path("data/incidents.jsonl")
 
 
@@ -14,7 +14,7 @@ def save_all(items):
 
 def create(title, severity, summary):
     items=load_all()
-    it={"id":f"inc-{int(datetime.datetime.utcnow().timestamp())}","created_at":datetime.datetime.utcnow().isoformat()+"Z","title":title,"severity":severity,"summary":summary,"status":"open"}
+    it={"id":f"inc-{uuid.uuid4().hex[:10]}","created_at":datetime.datetime.now(datetime.timezone.utc).isoformat(),"title":title,"severity":severity,"summary":summary,"status":"open"}
     items.append(it); save_all(items); print(it["id"])
 
 
